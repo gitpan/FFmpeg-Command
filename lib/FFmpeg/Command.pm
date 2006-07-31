@@ -2,7 +2,7 @@ package FFmpeg::Command;
 
 use warnings;
 use strict;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use base qw( Class::Accessor::Fast Class::ErrorHandler );
 __PACKAGE__->mk_accessors( qw( input_file output_file ffmpeg options ) );
@@ -74,7 +74,7 @@ sub output_options {
     );
 
     for ( keys %output_option ){
-        if( defined $option{$_} ){
+        if( defined $option{$_} and defined $output_option{$_} ){
             push @{ $self->options }, $option{$_}, $output_option{$_};
         }
         else {
