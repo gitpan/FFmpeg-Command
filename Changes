@@ -1,5 +1,9 @@
 Revision history for FFmpeg-Command
 
+0.13    Sat Nov 14
+        Fix a bug in composing $cmd.
+        Thanks to Doran L. "Fozz" Barton.
+
 0.12    Fri Nov 13
         Fix redirect in cheking existense of ffmpeg binary.
         Thanks to Gea-Suan Lin.

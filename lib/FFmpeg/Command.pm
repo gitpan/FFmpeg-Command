@@ -2,7 +2,7 @@ package FFmpeg::Command;
 
 use warnings;
 use strict;
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use base qw( Class::Accessor::Fast Class::ErrorHandler );
 __PACKAGE__->mk_accessors( qw( input_file output_file ffmpeg options timeout stdout stderr command ) );
@@ -117,7 +117,7 @@ sub execute {
     my $cmd = [
         $self->ffmpeg,
         '-y',
-        map { ( '-i', $_ ) } @$files,
+        map ( { ( '-i', $_ ) } @$files ),
         @{ $self->options },
     ];
 
